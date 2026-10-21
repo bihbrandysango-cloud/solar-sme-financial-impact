@@ -1,0 +1,197 @@
+Country,Region,SME_Type,System_Type,Avg_System_Price_USD,Annual_Savings_USD,ROI_Percent,Payback_Period_Years,Financial_Benefit_Level
+Angola,Central Africa,Cold Storage,Solar Refrigeration,941,214.75,22.82,4.38,Moderate
+Angola,Central Africa,Food Retail,Small SHS (3-49Wp),194,53.77,27.72,3.61,High
+Angola,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,149.91,26.21,3.82,High
+Angola,Central Africa,Agriculture,Solar Water Pump,1261,369.94,29.34,3.41,High
+Benin,West Africa,Cold Storage,Solar Refrigeration,941,277.18,29.46,3.39,High
+Benin,West Africa,Food Retail,Small SHS (3-49Wp),194,65.03,33.52,2.98,High
+Benin,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,175.39,30.66,3.26,High
+Benin,West Africa,Agriculture,Solar Water Pump,1261,465.61,36.92,2.71,Very High
+Botswana,Southern Africa,Cold Storage,Solar Refrigeration,941,227.17,24.14,4.14,Moderate
+Botswana,Southern Africa,Food Retail,Small SHS (3-49Wp),194,53.93,27.8,3.6,High
+Botswana,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,148.97,26.04,3.84,High
+Botswana,Southern Africa,Agriculture,Solar Water Pump,1261,382.44,30.33,3.3,High
+Burkina Faso,West Africa,Cold Storage,Solar Refrigeration,941,320.54,34.06,2.94,High
+Burkina Faso,West Africa,Food Retail,Small SHS (3-49Wp),194,69.49,35.82,2.79,Very High
+Burkina Faso,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,211.62,37.0,2.7,Very High
+Burkina Faso,West Africa,Agriculture,Solar Water Pump,1261,517.24,41.02,2.44,Very High
+Burundi,East Africa,Cold Storage,Solar Refrigeration,941,303.14,32.22,3.1,High
+Burundi,East Africa,Food Retail,Small SHS (3-49Wp),194,72.71,37.48,2.67,Very High
+Burundi,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,189.2,33.08,3.02,High
+Burundi,East Africa,Agriculture,Solar Water Pump,1261,482.79,38.29,2.61,Very High
+Cabo Verde,West Africa,Cold Storage,Solar Refrigeration,941,302.98,32.2,3.11,High
+Cabo Verde,West Africa,Food Retail,Small SHS (3-49Wp),194,72.05,37.14,2.69,Very High
+Cabo Verde,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,195.04,34.1,2.93,High
+Cabo Verde,West Africa,Agriculture,Solar Water Pump,1261,518.61,41.13,2.43,Very High
+Cameroon,Central Africa,Cold Storage,Solar Refrigeration,941,283.32,30.11,3.32,High
+Cameroon,Central Africa,Food Retail,Small SHS (3-49Wp),194,65.15,33.58,2.98,High
+Cameroon,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,184.05,32.18,3.11,High
+Cameroon,Central Africa,Agriculture,Solar Water Pump,1261,456.76,36.22,2.76,Very High
+Central African Republic,Central Africa,Cold Storage,Solar Refrigeration,941,356.69,37.91,2.64,Very High
+Central African Republic,Central Africa,Food Retail,Small SHS (3-49Wp),194,80.12,41.3,2.42,Very High
+Central African Republic,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,218.27,38.16,2.62,Very High
+Central African Republic,Central Africa,Agriculture,Solar Water Pump,1261,568.32,45.07,2.22,Very High
+Chad,Central Africa,Cold Storage,Solar Refrigeration,941,338.18,35.94,2.78,Very High
+Chad,Central Africa,Food Retail,Small SHS (3-49Wp),194,78.18,40.3,2.48,Very High
+Chad,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,226.1,39.53,2.53,Very High
+Chad,Central Africa,Agriculture,Solar Water Pump,1261,525.15,41.65,2.4,Very High
+Comoros,East Africa,Cold Storage,Solar Refrigeration,941,317.92,33.79,2.96,High
+Comoros,East Africa,Food Retail,Small SHS (3-49Wp),194,72.49,37.37,2.68,Very High
+Comoros,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,197.94,34.6,2.89,High
+Comoros,East Africa,Agriculture,Solar Water Pump,1261,541.92,42.98,2.33,Very High
+Congo (Brazzaville),Central Africa,Cold Storage,Solar Refrigeration,941,298.08,31.68,3.16,High
+Congo (Brazzaville),Central Africa,Food Retail,Small SHS (3-49Wp),194,70.62,36.4,2.75,Very High
+Congo (Brazzaville),Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,198.17,34.64,2.89,High
+Congo (Brazzaville),Central Africa,Agriculture,Solar Water Pump,1261,449.29,35.63,2.81,Very High
+Congo (Kinshasa),Central Africa,Cold Storage,Solar Refrigeration,941,307.52,32.68,3.06,High
+Congo (Kinshasa),Central Africa,Food Retail,Small SHS (3-49Wp),194,72.37,37.31,2.68,Very High
+Congo (Kinshasa),Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,188.87,33.02,3.03,High
+Congo (Kinshasa),Central Africa,Agriculture,Solar Water Pump,1261,484.25,38.4,2.6,Very High
+Cote d'Ivoire,West Africa,Cold Storage,Solar Refrigeration,941,279.34,29.69,3.37,High
+Cote d'Ivoire,West Africa,Food Retail,Small SHS (3-49Wp),194,69.83,35.99,2.78,Very High
+Cote d'Ivoire,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,188.44,32.94,3.04,High
+Cote d'Ivoire,West Africa,Agriculture,Solar Water Pump,1261,488.8,38.76,2.58,Very High
+Djibouti,East Africa,Cold Storage,Solar Refrigeration,941,302.66,32.16,3.11,High
+Djibouti,East Africa,Food Retail,Small SHS (3-49Wp),194,72.88,37.57,2.66,Very High
+Djibouti,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,199.95,34.96,2.86,High
+Djibouti,East Africa,Agriculture,Solar Water Pump,1261,504.6,40.02,2.5,Very High
+Equatorial Guinea,Central Africa,Cold Storage,Solar Refrigeration,941,244.94,26.03,3.84,High
+Equatorial Guinea,Central Africa,Food Retail,Small SHS (3-49Wp),194,53.52,27.59,3.62,High
+Equatorial Guinea,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,158.03,27.63,3.62,High
+Equatorial Guinea,Central Africa,Agriculture,Solar Water Pump,1261,398.33,31.59,3.17,High
+Eritrea,East Africa,Cold Storage,Solar Refrigeration,941,323.68,34.4,2.91,High
+Eritrea,East Africa,Food Retail,Small SHS (3-49Wp),194,80.4,41.44,2.41,Very High
+Eritrea,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,210.2,36.75,2.72,Very High
+Eritrea,East Africa,Agriculture,Solar Water Pump,1261,554.32,43.96,2.27,Very High
+Eswatini,Southern Africa,Cold Storage,Solar Refrigeration,941,254.04,27.0,3.7,High
+Eswatini,Southern Africa,Food Retail,Small SHS (3-49Wp),194,63.62,32.79,3.05,High
+Eswatini,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,169.81,29.69,3.37,High
+Eswatini,Southern Africa,Agriculture,Solar Water Pump,1261,408.82,32.42,3.08,High
+Ethiopia,East Africa,Cold Storage,Solar Refrigeration,941,230.08,24.45,4.09,Moderate
+Ethiopia,East Africa,Food Retail,Small SHS (3-49Wp),194,57.39,29.58,3.38,High
+Ethiopia,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,147.3,25.75,3.88,High
+Ethiopia,East Africa,Agriculture,Solar Water Pump,1261,400.48,31.76,3.15,High
+Gabon,Central Africa,Cold Storage,Solar Refrigeration,941,252.37,26.82,3.73,High
+Gabon,Central Africa,Food Retail,Small SHS (3-49Wp),194,56.01,28.87,3.46,High
+Gabon,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,165.49,28.93,3.46,High
+Gabon,Central Africa,Agriculture,Solar Water Pump,1261,398.95,31.64,3.16,High
+Gambia,West Africa,Cold Storage,Solar Refrigeration,941,306.61,32.58,3.07,High
+Gambia,West Africa,Food Retail,Small SHS (3-49Wp),194,72.84,37.55,2.66,Very High
+Gambia,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,190.56,33.31,3.0,High
+Gambia,West Africa,Agriculture,Solar Water Pump,1261,517.68,41.05,2.44,Very High
+Ghana,West Africa,Cold Storage,Solar Refrigeration,941,280.59,29.82,3.35,High
+Ghana,West Africa,Food Retail,Small SHS (3-49Wp),194,66.2,34.12,2.93,High
+Ghana,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,182.16,31.85,3.14,High
+Ghana,West Africa,Agriculture,Solar Water Pump,1261,468.05,37.12,2.69,Very High
+Guinea,West Africa,Cold Storage,Solar Refrigeration,941,280.1,29.77,3.36,High
+Guinea,West Africa,Food Retail,Small SHS (3-49Wp),194,71.29,36.75,2.72,Very High
+Guinea,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,183.01,31.99,3.13,High
+Guinea,West Africa,Agriculture,Solar Water Pump,1261,485.62,38.51,2.6,Very High
+Guinea-Bissau,West Africa,Cold Storage,Solar Refrigeration,941,310.68,33.02,3.03,High
+Guinea-Bissau,West Africa,Food Retail,Small SHS (3-49Wp),194,77.58,39.99,2.5,Very High
+Guinea-Bissau,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,202.36,35.38,2.83,Very High
+Guinea-Bissau,West Africa,Agriculture,Solar Water Pump,1261,512.45,40.64,2.46,Very High
+Kenya,East Africa,Cold Storage,Solar Refrigeration,941,267.02,28.38,3.52,High
+Kenya,East Africa,Food Retail,Small SHS (3-49Wp),194,63.68,32.82,3.05,High
+Kenya,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,187.24,32.73,3.05,High
+Kenya,East Africa,Agriculture,Solar Water Pump,1261,471.24,37.37,2.68,Very High
+Lesotho,Southern Africa,Cold Storage,Solar Refrigeration,941,292.79,31.12,3.21,High
+Lesotho,Southern Africa,Food Retail,Small SHS (3-49Wp),194,67.13,34.6,2.89,High
+Lesotho,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,178.38,31.19,3.21,High
+Lesotho,Southern Africa,Agriculture,Solar Water Pump,1261,472.22,37.45,2.67,Very High
+Liberia,West Africa,Cold Storage,Solar Refrigeration,941,327.32,34.78,2.87,High
+Liberia,West Africa,Food Retail,Small SHS (3-49Wp),194,79.03,40.74,2.45,Very High
+Liberia,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,218.23,38.15,2.62,Very High
+Liberia,West Africa,Agriculture,Solar Water Pump,1261,557.72,44.23,2.26,Very High
+Madagascar,East Africa,Cold Storage,Solar Refrigeration,941,289.73,30.79,3.25,High
+Madagascar,East Africa,Food Retail,Small SHS (3-49Wp),194,68.92,35.53,2.81,Very High
+Madagascar,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,184.92,32.33,3.09,High
+Madagascar,East Africa,Agriculture,Solar Water Pump,1261,488.16,38.71,2.58,Very High
+Malawi,Southern Africa,Cold Storage,Solar Refrigeration,941,303.11,32.21,3.1,High
+Malawi,Southern Africa,Food Retail,Small SHS (3-49Wp),194,69.87,36.02,2.78,Very High
+Malawi,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,181.39,31.71,3.15,High
+Malawi,Southern Africa,Agriculture,Solar Water Pump,1261,466.11,36.96,2.71,Very High
+Mali,West Africa,Cold Storage,Solar Refrigeration,941,322.49,34.27,2.92,High
+Mali,West Africa,Food Retail,Small SHS (3-49Wp),194,69.69,35.92,2.78,Very High
+Mali,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,204.05,35.67,2.8,Very High
+Mali,West Africa,Agriculture,Solar Water Pump,1261,497.63,39.46,2.53,Very High
+Mauritania,West Africa,Cold Storage,Solar Refrigeration,941,282.59,30.03,3.33,High
+Mauritania,West Africa,Food Retail,Small SHS (3-49Wp),194,64.79,33.4,2.99,High
+Mauritania,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,174.3,30.47,3.28,High
+Mauritania,West Africa,Agriculture,Solar Water Pump,1261,435.91,34.57,2.89,High
+Mauritius,East Africa,Cold Storage,Solar Refrigeration,941,227.48,24.17,4.14,Moderate
+Mauritius,East Africa,Food Retail,Small SHS (3-49Wp),194,51.92,26.76,3.74,High
+Mauritius,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,142.02,24.83,4.03,Moderate
+Mauritius,East Africa,Agriculture,Solar Water Pump,1261,364.81,28.93,3.46,High
+Mozambique,Southern Africa,Cold Storage,Solar Refrigeration,941,260.16,27.65,3.62,High
+Mozambique,Southern Africa,Food Retail,Small SHS (3-49Wp),194,61.69,31.8,3.14,High
+Mozambique,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,166.04,29.03,3.44,High
+Mozambique,Southern Africa,Agriculture,Solar Water Pump,1261,413.89,32.82,3.05,High
+Namibia,Southern Africa,Cold Storage,Solar Refrigeration,941,235.08,24.98,4.0,Moderate
+Namibia,Southern Africa,Food Retail,Small SHS (3-49Wp),194,55.94,28.83,3.47,High
+Namibia,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,160.55,28.07,3.56,High
+Namibia,Southern Africa,Agriculture,Solar Water Pump,1261,407.88,32.35,3.09,High
+Niger,West Africa,Cold Storage,Solar Refrigeration,941,316.87,33.67,2.97,High
+Niger,West Africa,Food Retail,Small SHS (3-49Wp),194,71.99,37.11,2.69,Very High
+Niger,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,208.03,36.37,2.75,Very High
+Niger,West Africa,Agriculture,Solar Water Pump,1261,503.4,39.92,2.5,Very High
+Nigeria,West Africa,Cold Storage,Solar Refrigeration,941,307.06,32.63,3.06,High
+Nigeria,West Africa,Food Retail,Small SHS (3-49Wp),194,65.49,33.76,2.96,High
+Nigeria,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,185.85,32.49,3.08,High
+Nigeria,West Africa,Agriculture,Solar Water Pump,1261,472.8,37.49,2.67,Very High
+Rwanda,East Africa,Cold Storage,Solar Refrigeration,941,330.0,35.07,2.85,Very High
+Rwanda,East Africa,Food Retail,Small SHS (3-49Wp),194,75.45,38.89,2.57,Very High
+Rwanda,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,208.76,36.5,2.74,Very High
+Rwanda,East Africa,Agriculture,Solar Water Pump,1261,517.88,41.07,2.43,Very High
+Sao Tome and Principe,Central Africa,Cold Storage,Solar Refrigeration,941,298.51,31.72,3.15,High
+Sao Tome and Principe,Central Africa,Food Retail,Small SHS (3-49Wp),194,69.64,35.9,2.79,Very High
+Sao Tome and Principe,Central Africa,Small Manufacturing,Larger SHS (50Wp+),572,188.32,32.92,3.04,High
+Sao Tome and Principe,Central Africa,Agriculture,Solar Water Pump,1261,497.62,39.46,2.53,Very High
+Senegal,West Africa,Cold Storage,Solar Refrigeration,941,297.77,31.64,3.16,High
+Senegal,West Africa,Food Retail,Small SHS (3-49Wp),194,69.34,35.74,2.8,Very High
+Senegal,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,201.02,35.14,2.85,Very High
+Senegal,West Africa,Agriculture,Solar Water Pump,1261,502.61,39.86,2.51,Very High
+Seychelles,East Africa,Cold Storage,Solar Refrigeration,941,215.23,22.87,4.37,Moderate
+Seychelles,East Africa,Food Retail,Small SHS (3-49Wp),194,46.66,24.05,4.16,Moderate
+Seychelles,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,137.63,24.06,4.16,Moderate
+Seychelles,East Africa,Agriculture,Solar Water Pump,1261,325.38,25.8,3.88,High
+Sierra Leone,West Africa,Cold Storage,Solar Refrigeration,941,335.43,35.65,2.81,Very High
+Sierra Leone,West Africa,Food Retail,Small SHS (3-49Wp),194,77.83,40.12,2.49,Very High
+Sierra Leone,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,205.06,35.85,2.79,Very High
+Sierra Leone,West Africa,Agriculture,Solar Water Pump,1261,542.8,43.05,2.32,Very High
+Somalia,East Africa,Cold Storage,Solar Refrigeration,941,346.44,36.82,2.72,Very High
+Somalia,East Africa,Food Retail,Small SHS (3-49Wp),194,84.23,43.42,2.3,Very High
+Somalia,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,234.89,41.06,2.44,Very High
+Somalia,East Africa,Agriculture,Solar Water Pump,1261,570.0,45.2,2.21,Very High
+South Africa,Southern Africa,Cold Storage,Solar Refrigeration,941,240.63,25.57,3.91,High
+South Africa,Southern Africa,Food Retail,Small SHS (3-49Wp),194,59.37,30.6,3.27,High
+South Africa,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,169.99,29.72,3.36,High
+South Africa,Southern Africa,Agriculture,Solar Water Pump,1261,404.73,32.1,3.12,High
+South Sudan,East Africa,Cold Storage,Solar Refrigeration,941,347.91,36.97,2.7,Very High
+South Sudan,East Africa,Food Retail,Small SHS (3-49Wp),194,87.32,45.01,2.22,Very High
+South Sudan,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,243.97,42.65,2.34,Very High
+South Sudan,East Africa,Agriculture,Solar Water Pump,1261,594.65,47.16,2.12,Very High
+Sudan,East Africa,Cold Storage,Solar Refrigeration,941,300.46,31.93,3.13,High
+Sudan,East Africa,Food Retail,Small SHS (3-49Wp),194,72.65,37.45,2.67,Very High
+Sudan,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,189.52,33.13,3.02,High
+Sudan,East Africa,Agriculture,Solar Water Pump,1261,507.46,40.24,2.48,Very High
+Tanzania,East Africa,Cold Storage,Solar Refrigeration,941,278.38,29.58,3.38,High
+Tanzania,East Africa,Food Retail,Small SHS (3-49Wp),194,62.03,31.97,3.13,High
+Tanzania,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,167.65,29.31,3.41,High
+Tanzania,East Africa,Agriculture,Solar Water Pump,1261,423.98,33.62,2.97,High
+Togo,West Africa,Cold Storage,Solar Refrigeration,941,297.95,31.66,3.16,High
+Togo,West Africa,Food Retail,Small SHS (3-49Wp),194,69.66,35.91,2.79,Very High
+Togo,West Africa,Small Manufacturing,Larger SHS (50Wp+),572,186.68,32.64,3.06,High
+Togo,West Africa,Agriculture,Solar Water Pump,1261,471.37,37.38,2.68,Very High
+Uganda,East Africa,Cold Storage,Solar Refrigeration,941,267.61,28.44,3.52,High
+Uganda,East Africa,Food Retail,Small SHS (3-49Wp),194,67.27,34.68,2.88,High
+Uganda,East Africa,Small Manufacturing,Larger SHS (50Wp+),572,188.12,32.89,3.04,High
+Uganda,East Africa,Agriculture,Solar Water Pump,1261,430.37,34.13,2.93,High
+Zambia,Southern Africa,Cold Storage,Solar Refrigeration,941,258.33,27.45,3.64,High
+Zambia,Southern Africa,Food Retail,Small SHS (3-49Wp),194,60.62,31.25,3.2,High
+Zambia,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,160.8,28.11,3.56,High
+Zambia,Southern Africa,Agriculture,Solar Water Pump,1261,390.2,30.94,3.23,High
+Zimbabwe,Southern Africa,Cold Storage,Solar Refrigeration,941,315.7,33.55,2.98,High
+Zimbabwe,Southern Africa,Food Retail,Small SHS (3-49Wp),194,72.87,37.56,2.66,Very High
+Zimbabwe,Southern Africa,Small Manufacturing,Larger SHS (50Wp+),572,195.9,34.25,2.92,High
+Zimbabwe,Southern Africa,Agriculture,Solar Water Pump,1261,478.39,37.94,2.64,Very High
