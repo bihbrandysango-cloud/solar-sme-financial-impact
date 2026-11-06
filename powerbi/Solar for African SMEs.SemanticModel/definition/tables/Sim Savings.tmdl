@@ -1,0 +1,14 @@
+table 'Sim Savings'
+	lineageTag: 5cc1dd3f-9e64-4b29-b9ed-db59a1ef20ff
+
+	column 'Savings Change %'
+		dataType: int64
+		formatString: +0\%;-0\%;0\%
+		lineageTag: 0225069a-8b17-4f7a-878e-83dd8e92e656
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition 'Sim Savings' = calculated
+		mode: import
+		source = GENERATESERIES(-20,30,10)
+

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sim_13",
+  "position": {
+    "x": 618,
+    "y": 268,
+    "z": 1013,
+    "height": 212,
+    "width": 376,
+    "tabOrder": 1013
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Short"
+                }
+              },
+              "queryRef": "Systems.Short",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Payback"
+                }
+              },
+              "queryRef": "_Measures.Avg Payback",
+              "nativeQueryRef": "a",
+              "displayName": "a"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sim Payback"
+                }
+              },
+              "queryRef": "_Measures.Sim Payback",
+              "nativeQueryRef": "b",
+              "displayName": "b"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"layer\": [{\"mark\": {\"type\": \"rule\", \"strokeWidth\": 5, \"color\": \"#7F93A3\", \"strokeCap\": \"round\"}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"a\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 4.5]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"tickCount\": 5}}, \"x2\": {\"field\": \"b\"}}}, {\"mark\": {\"type\": \"circle\", \"size\": 120, \"color\": \"#F1F7FC\", \"opacity\": 1}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"a\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 4.5]}}, \"tooltip\": [{\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"a\", \"title\": \"Now\", \"format\": \".1f\"}, {\"field\": \"b\", \"title\": \"Scenario\", \"format\": \".1f\"}]}}, {\"mark\": {\"type\": \"circle\", \"size\": 120, \"color\": \"#FFD23F\", \"opacity\": 1}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"b\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 4.5]}}, \"tooltip\": [{\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"b\", \"title\": \"Scenario\", \"format\": \".1f\"}]}}, {\"mark\": {\"type\": \"text\", \"dy\": -13, \"fontSize\": 11, \"fontWeight\": 700, \"color\": \"#FFD23F\"}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"b\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 4.5]}}, \"text\": {\"field\": \"b\", \"format\": \".1f\"}}}, {\"mark\": {\"type\": \"text\", \"dy\": -13, \"fontSize\": 11, \"fontWeight\": 700, \"color\": \"#F1F7FC\"}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"a\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 4.5]}}, \"text\": {\"field\": \"a\", \"format\": \".1f\"}}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

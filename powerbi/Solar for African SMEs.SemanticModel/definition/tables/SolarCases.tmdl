@@ -1,0 +1,78 @@
+table SolarCases
+	lineageTag: 6528766b-b40a-4afb-9220-d2e5bdcbd247
+
+	column Country
+		dataType: string
+		lineageTag: cbf907e5-6549-4d95-aed8-2e795fb9c66a
+		summarizeBy: none
+		sourceColumn: Country
+
+	column Region
+		dataType: string
+		lineageTag: ebc88b96-672d-4b26-a0d7-cd5f33eaeb55
+		summarizeBy: none
+		sourceColumn: Region
+
+	column SME_Type
+		dataType: string
+		lineageTag: 080827cf-24a9-4f23-9123-771645a551b9
+		summarizeBy: none
+		sourceColumn: SME_Type
+
+	column System_Type
+		dataType: string
+		lineageTag: e26ccae9-b1d7-4da5-a458-5b3375e38ce1
+		summarizeBy: none
+		sourceColumn: System_Type
+
+	column Avg_System_Price_USD
+		dataType: double
+		lineageTag: 4333c6c5-40c6-4115-89b4-8896b4f07992
+		summarizeBy: none
+		sourceColumn: Avg_System_Price_USD
+
+	column Annual_Savings_USD
+		dataType: double
+		lineageTag: da6c399a-a867-4526-bb84-d32d96009cb7
+		summarizeBy: none
+		sourceColumn: Annual_Savings_USD
+
+	column ROI_Percent
+		dataType: double
+		lineageTag: 108ea55b-bb2c-431b-8f41-f95d0a024c22
+		summarizeBy: none
+		sourceColumn: ROI_Percent
+
+	column Payback_Period_Years
+		dataType: double
+		lineageTag: 2bce368c-4567-464a-af70-7b2652615bda
+		summarizeBy: none
+		sourceColumn: Payback_Period_Years
+
+	column Financial_Benefit_Level
+		dataType: string
+		lineageTag: c158fdc4-2cc5-4d1b-9404-6ab4d0b7ec98
+		summarizeBy: none
+		sourceColumn: Financial_Benefit_Level
+
+	column 'Band Order' = INT((SolarCases[Payback_Period_Years]-2)/0.25)+1
+		dataType: int64
+		lineageTag: 5f7ac597-5a23-495b-bc27-addaf4509b10
+		summarizeBy: none
+
+	column 'Payback Band' = SWITCH(SolarCases[Band Order],1,"2-2.25",2,"2.25-2.5",3,"2.5-2.75",4,"2.75-3",5,"3-3.25",6,"3.25-3.5",7,"3.5-3.75",8,"3.75-4",9,"4-4.25",10,"4.25-4.5")
+		dataType: string
+		lineageTag: ab269df9-e71e-47db-9542-74a65f1cabd8
+		summarizeBy: none
+		sortByColumn: 'Band Order'
+
+	partition SolarCases = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "expanded_solar_financial_impact.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    H = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    T = Table.TransformColumnTypes(H,{{"Country", type text},{"Region", type text},{"SME_Type", type text},{"System_Type", type text},{"Avg_System_Price_USD", type number},{"Annual_Savings_USD", type number},{"ROI_Percent", type number},{"Payback_Period_Years", type number},{"Financial_Benefit_Level", type text}})
+				in
+				    T
+

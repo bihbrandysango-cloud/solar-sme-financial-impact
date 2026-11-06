@@ -1,0 +1,208 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_reg_10",
+  "position": {
+    "x": 136,
+    "y": 480,
+    "z": 1010,
+    "height": 224,
+    "width": 858,
+    "tabOrder": 1010
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Geography.Country",
+              "nativeQueryRef": "c",
+              "displayName": "c"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "Geography.Region",
+              "nativeQueryRef": "g",
+              "displayName": "g"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Return"
+                }
+              },
+              "queryRef": "_Measures.Avg Return",
+              "nativeQueryRef": "v",
+              "displayName": "v"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Payback"
+                }
+              },
+              "queryRef": "_Measures.Avg Payback",
+              "nativeQueryRef": "py",
+              "displayName": "py"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"window\": [{\"op\": \"row_number\", \"as\": \"rk\"}], \"sort\": [{\"field\": \"v\"}], \"groupby\": [\"g\"]}, {\"calculate\": \"datum.rk%3-1\", \"as\": \"j\"}, {\"joinaggregate\": [{\"op\": \"mean\", \"field\": \"v\", \"as\": \"m\"}], \"groupby\": [\"g\"]}], \"layer\": [{\"mark\": {\"type\": \"tick\", \"thickness\": 3, \"size\": 44, \"opacity\": 0.55}, \"encoding\": {\"y\": {\"field\": \"g\", \"type\": \"nominal\", \"sort\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"x\": {\"field\": \"m\", \"type\": \"quantitative\", \"scale\": {\"domain\": [22, 45]}}, \"color\": {\"field\": \"g\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"range\": [\"#FFD23F\", \"#FF9F1C\", \"#4FB3F0\", \"#F1F7FC\"]}, \"legend\": null}}}, {\"mark\": {\"type\": \"circle\", \"size\": 90, \"opacity\": 1, \"stroke\": \"#06111C\", \"strokeWidth\": 0.8}, \"encoding\": {\"y\": {\"field\": \"g\", \"type\": \"nominal\", \"sort\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"yOffset\": {\"field\": \"j\", \"type\": \"quantitative\", \"scale\": {\"domain\": [-3, 3]}}, \"x\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [22, 45]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"tickCount\": 6, \"labelExpr\": \"datum.value+''%''\"}}, \"color\": {\"field\": \"g\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"range\": [\"#FFD23F\", \"#FF9F1C\", \"#4FB3F0\", \"#F1F7FC\"]}, \"legend\": null}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}, \"tooltip\": [{\"field\": \"c\", \"title\": \"Country\"}, {\"field\": \"v\", \"title\": \"Average return\", \"format\": \".1f\"}, {\"field\": \"py\", \"title\": \"Payback, years\", \"format\": \".1f\"}]}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            },
+            "enableSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sys_11",
+  "position": {
+    "x": 546,
+    "y": 502,
+    "z": 1011,
+    "height": 202,
+    "width": 448,
+    "tabOrder": 1011
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Geography.Country",
+              "nativeQueryRef": "c",
+              "displayName": "c"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Short"
+                }
+              },
+              "queryRef": "Systems.Short",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Savings"
+                }
+              },
+              "queryRef": "_Measures.Avg Savings",
+              "nativeQueryRef": "v",
+              "displayName": "v"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"window\": [{\"op\": \"row_number\", \"as\": \"rk\"}], \"sort\": [{\"field\": \"v\"}], \"groupby\": [\"s\"]}, {\"calculate\": \"datum.rk%5-2\", \"as\": \"j\"}], \"layer\": [{\"mark\": {\"type\": \"circle\", \"size\": 34, \"opacity\": 0.92}, \"encoding\": {\"y\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"yOffset\": {\"field\": \"j\", \"type\": \"quantitative\", \"scale\": {\"domain\": [-6, 6]}}, \"x\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"type\": \"log\", \"domain\": [40, 700], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [50, 100, 200, 400], \"labelExpr\": \"''$''+datum.value\"}}, \"color\": {\"field\": \"s\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"range\": [\"#FFD23F\", \"#4FB3F0\", \"#FF9F1C\", \"#F1F7FC\"]}, \"legend\": null}, \"tooltip\": [{\"field\": \"c\", \"title\": \"Country\"}, {\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"v\", \"title\": \"Saved each year\", \"format\": \"$,.0f\"}]}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

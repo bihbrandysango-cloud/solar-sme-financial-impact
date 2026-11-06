@@ -1,0 +1,14 @@
+table 'Sim Subsidy'
+	lineageTag: e50d51e5-86e1-4ce8-8993-8f0facc8c86b
+
+	column 'Subsidy %'
+		dataType: int64
+		formatString: 0\%
+		lineageTag: 872a6ef1-64ee-43b2-85c4-c734cedef32f
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition 'Sim Subsidy' = calculated
+		mode: import
+		source = {0,10,20,25,30,40,50}
+

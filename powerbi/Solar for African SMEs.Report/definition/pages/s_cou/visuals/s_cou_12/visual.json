@@ -1,0 +1,216 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_cou_12",
+  "position": {
+    "x": 1026,
+    "y": 216,
+    "z": 1012,
+    "height": 290,
+    "width": 232,
+    "tabOrder": 1012
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top Country"
+                }
+              },
+              "queryRef": "_Measures.Top Country",
+              "nativeQueryRef": "a",
+              "displayName": "a"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top Region"
+                }
+              },
+              "queryRef": "_Measures.Top Region",
+              "nativeQueryRef": "b",
+              "displayName": "b"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top Return"
+                }
+              },
+              "queryRef": "_Measures.Top Return",
+              "nativeQueryRef": "r",
+              "displayName": "r"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top Payback"
+                }
+              },
+              "queryRef": "_Measures.Top Payback",
+              "nativeQueryRef": "py",
+              "displayName": "py"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top Savings"
+                }
+              },
+              "queryRef": "_Measures.Top Savings",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"calculate\": \"datum.a\", \"as\": \"lA\"}, {\"calculate\": \"datum.b\", \"as\": \"lB\"}, {\"calculate\": \"format(datum.r,''.1f'')+''%''\", \"as\": \"v0\"}, {\"calculate\": \"''Average return''\", \"as\": \"l0\"}, {\"calculate\": \"format(datum.py,''.1f'')+'' years''\", \"as\": \"v1\"}, {\"calculate\": \"''Average payback''\", \"as\": \"l1\"}, {\"calculate\": \"''$''+format(datum.s,'',.0f'')\", \"as\": \"v2\"}, {\"calculate\": \"''Saved each year''\", \"as\": \"l2\"}], \"layer\": [{\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 17, \"color\": \"#F1F7FC\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"lA\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"3\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"color\": \"#C5D6E3\", \"fontWeight\": 400, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"lB\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"9.5\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"rect\", \"color\": \"rgba(255,255,255,.28)\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"x2\": {\"field\": \"_x2\"}, \"y2\": {\"field\": \"_y2\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"14.0\", \"as\": \"_y\"}, {\"calculate\": \"100\", \"as\": \"_x2\"}, {\"calculate\": \"14.25\", \"as\": \"_y2\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 18, \"color\": \"#F1F7FC\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"v0\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"24.893333333333334\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"color\": \"#C5D6E3\", \"fontWeight\": 400, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"l0\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"34.64\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"rect\", \"color\": \"rgba(255,255,255,.28)\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"x2\": {\"field\": \"_x2\"}, \"y2\": {\"field\": \"_y2\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"42.66666666666667\", \"as\": \"_y\"}, {\"calculate\": \"100\", \"as\": \"_x2\"}, {\"calculate\": \"42.91666666666667\", \"as\": \"_y2\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 18, \"color\": \"#F1F7FC\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"v1\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"53.56\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"color\": \"#C5D6E3\", \"fontWeight\": 400, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"l1\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"63.30666666666667\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"rect\", \"color\": \"rgba(255,255,255,.28)\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"x2\": {\"field\": \"_x2\"}, \"y2\": {\"field\": \"_y2\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"71.33333333333334\", \"as\": \"_y\"}, {\"calculate\": \"100\", \"as\": \"_x2\"}, {\"calculate\": \"71.58333333333334\", \"as\": \"_y2\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 18, \"color\": \"#F1F7FC\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"v2\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"82.22666666666667\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"color\": \"#C5D6E3\", \"fontWeight\": 400, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"l2\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"91.97333333333334\", \"as\": \"_y\"}]}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

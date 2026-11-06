@@ -1,0 +1,3 @@
+expression DataFolder = "C:\Users\Sango\Desktop\Project Templates\Solar SME - Final Project\00 Source\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d306a2e3-8b61-421c-b871-93380ee186ce
+
