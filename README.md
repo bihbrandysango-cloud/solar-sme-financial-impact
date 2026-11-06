@@ -10,6 +10,8 @@
 
 [![Solar for African SMEs Overview page](docs/screenshots/power-bi/01-overview.jpg)](https://bihbrandysango-cloud.github.io/projects/solar/)
 
+**Capstone project, Women Techsters Fellowship 2026 (Tech4Dev), Data Science and Engineering track.**
+
 A five-page Power BI report that compares the cost, yearly savings, return and payback of four off-grid solar systems used by small and medium businesses in 49 African countries.
 
 - 📊 [Power BI project](powerbi/) (open `Solar for African SMEs.pbip` in Power BI Desktop)
@@ -112,7 +114,16 @@ This project answers that for four business types, four regions and 49 countries
 
 ## Data
 
-The dataset has 196 rows: 49 countries × 4 system types. Each row is one country and one business type.
+**Where the data comes from.** The dataset combines public benchmark data with a transparent return model. I compiled it in February 2026 with the help of Manus, an AI research agent, in two steps.
+
+1. **Benchmarks.** Price, savings, return and payback figures for four systems in Nigeria, Kenya, Rwanda and South Africa, plus three sub-Saharan averages, drawn from public energy-access, solar-cost, productive-use and tariff reports (see [Sources](#sources)). They are in the `Benchmark_Data` sheet of [`solar_financial_impact.xlsx`](data/solar_financial_impact.xlsx).
+2. **Modelled estimates for 49 countries.** The benchmarks were extended to every country with a simple model: yearly savings come from the energy a system replaces and local power costs, payback is price ÷ yearly savings, and return is yearly savings ÷ price.
+
+None of the source organisations published a 49-country table of SME returns. They supplied the cost, appliance, tariff and market inputs. **Every row in the final dataset is a modelled estimate**, including the four benchmark countries, whose values were adjusted during modelling.
+
+System prices are the same in every country. Savings vary by country, so return and payback do too.
+
+The final dataset has 196 rows: 49 countries × 4 system types. Each row is one country and one business type.
 
 | Column | Description |
 |---|---|
@@ -127,6 +138,19 @@ The dataset has 196 rows: 49 countries × 4 system types. Each row is one countr
 | `Financial_Benefit_Level` | Moderate, High or Very High |
 
 The Power BI model adds three small lookup files built from the dataset: `geography.csv` (region, short name and map position for each country), `systems.csv` (short name and business type for each system) and `levels.csv` (benefit level order).
+
+---
+
+## Method
+
+1. **Load and check.** Power Query reads the CSV and sets a type for each column. All 196 rows load with no missing values, so no rows were dropped or filled in.
+2. **Model.** One fact table (`SolarCases`, one row per country and system) joins three small lookup tables: `Geography`, `Systems` and `Levels`. This star schema lets one region filter work across every page.
+3. **Return and payback.** Return is yearly savings divided by system price, times 100. Payback is system price divided by yearly savings. I checked the dataset's own `ROI_Percent` and `Payback_Period_Years` columns against these formulas, and every row matches to within 0.01.
+4. **Averages.** Each country and system pair counts once, so the averages are simple means across cases. They are not weighted by how many businesses use each system.
+5. **Benefit levels.** In the data, Moderate means a return below 25%, High means 25% to 35%, and Very High means 35% or more.
+6. **Simulator.** For a subsidy *s* and a change in savings *c*, payback for each case is price × (1 − *s*) ÷ (savings × (1 + *c*)), averaged across cases. The subsidy a system needs for a two-year payback is 1 − 2 × savings × (1 + *c*) ÷ price.
+
+All 58 measures are in [`_Measures.tmdl`](powerbi/Solar%20for%20African%20SMEs.SemanticModel/definition/tables/_Measures.tmdl), so the numbers can be checked or reproduced.
 
 ---
 
@@ -166,6 +190,34 @@ The first version of the report is kept as `powerbi/Financial_Impact_Dashboard.p
 - **Each business type uses one system.** Agriculture always uses a water pump, food retail always a small home system, and so on. Business type and system type can't be compared separately.
 - **System prices are the same in every country.** Only the savings change by country, so the regional differences come from savings alone. Real prices vary with import duties and local suppliers.
 - **No financing costs.** ROI and payback ignore loan interest, maintenance and battery replacement, so real payback will be longer.
+- **Unweighted averages.** Every country counts the same, whether it has many small businesses or few, so the averages describe the cases rather than the whole market.
+- **All rows are modelled estimates.** Country and regional rankings, such as West Africa leading, show what the model implies, not measured results. The figures should be read as scenarios.
+- **Tariff inputs may be dated.** One tariff source, the World Bank's brief on nonresidential tariffs, uses schedules from July 2014. Current national regulator tariffs would make the savings more accurate.
+- **One point in time.** The data has no dates, so it can't show how prices or savings change over the years.
+
+---
+
+## Sources
+
+Reports that supplied the benchmark inputs and context. None of them publishes the dataset's row-level figures directly.
+
+| # | Source | What it supports |
+|---|---|---|
+| 1 | World Bank / GOGLA, [Off-Grid Solar Market Trends Report 2024](https://documents1.worldbank.org/curated/en/099090225151516968/pdf/P507761-4ff9bd3f-07b5-4717-bf77-63494281e461.pdf) | Productive-use appliance sales and prices, including water pumps and cold storage |
+| 2 | IRENA, [Renewable Power Generation Costs in 2023](https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2024/Sep/IRENA_Renewable_power_generation_costs_in_2023.pdf) | Solar installed-cost and cost-trend benchmarks |
+| 3 | Efficiency for Access / CLASP, [The State of the Off-Grid Appliance Market](https://efficiencyforaccess.org/wp-content/uploads/Clasp-SOGAM-Report-final.pdf) | Off-grid refrigerator and productive-use evidence |
+| 4 | Efficiency for Access, [Exploring the Holistic Impact of Clean Energy-Powered Cold Chain](https://efficiencyforaccess.org/updates/exploring-the-holistic-impact-of-clean-energy-powered-cold-chain/) | The business case for cold storage |
+| 5 | World Bank, [Electricity Tariffs for Nonresidential Customers in Sub-Saharan Africa](https://documents1.worldbank.org/curated/en/489411494351752887/pdf/114848-BRI-PUBLIC-LWLJfinalOKR.pdf) | Commercial tariffs in 38 countries (2014 schedules) |
+| 6 | IFC, [Climate Investment Opportunities in Emerging Markets](https://www.ifc.org/content/dam/ifc/doc/mgrt/3503-ifc-climate-investment-opportunity-report-dec-final.pdf) | Investment context for Kenya, Nigeria and South Africa |
+| 7 | AfDB, [Electricity Regulatory Index for Africa 2022](https://africa-energy-portal.org/sites/default/files/2023-02/ERI%202022_AFDB%20EN.pdf) | Tariff-setting and regulatory context |
+
+Current tariffs for a future version: [NERC](https://nerc.gov.ng/media/multi-year-tariff-order-myto-2024/) (Nigeria), [EPRA](https://www.epra.go.ke/electricity-tariff-registers) (Kenya), [RURA](https://www.rura.rw/publications/tariffs) (Rwanda) and [NERSA](https://www.nersa.org.za/electricity/pricing) (South Africa).
+
+### Further reading
+
+- GOGLA, [Global Off-Grid Solar Market Report 2026](https://gogla.org/wp-content/uploads/2026/06/GOGLA_Global-Off-Grid-Solar-Market-Report_2026_DEF3.pdf)
+- Lighting Global (World Bank), [The Market Opportunity for Productive Use Leveraging Solar Energy (PULSE) in Sub-Saharan Africa](https://www.lightingglobal.org/wp-content/uploads/2019/09/PULSE-Report.pdf), 2019
+- Efficiency for Access, [Solar Water Pump Outlook 2019](https://efficiencyforaccess.org/publications/solar-water-pump-outlook-2019-global-trends-and-market-opportunities/)
 
 ---
 
