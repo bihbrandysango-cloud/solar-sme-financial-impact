@@ -154,7 +154,7 @@ solar-sme-financial-impact/
 ## Run it locally
 
 1. Clone or download this repository.
-2. Open `powerbi/Solar for African SMEs.pbip` in Power BI Desktop (free from Microsoft). The Deneb visual is included in the project.
+2. Open `powerbi/Solar for African SMEs.pbip` in Power BI Desktop (free from Microsoft). Power BI Desktop loads the Deneb visual from AppSource the first time you open it.
 3. The saved data opens straight away. To refresh it, set the `DataFolder` parameter (Transform data › Edit parameters) to this repository's `data\` folder, ending with a backslash.
 
 The first version of the report is kept as `powerbi/Financial_Impact_Dashboard.pbix`.
