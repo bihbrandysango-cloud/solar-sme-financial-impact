@@ -1,0 +1,5 @@
+System_Type,Short,SME_Type,Order
+Solar Water Pump,Water Pump,Agriculture,1
+Solar Refrigeration,Refrigeration,Cold Storage,2
+Larger SHS (50Wp+),Larger SHS,Small Manufacturing,3
+Small SHS (3-49Wp),Small SHS,Food Retail,4

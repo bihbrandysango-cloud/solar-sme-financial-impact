@@ -1,0 +1,26 @@
+table Levels
+	lineageTag: 36fc8f01-fc8e-4f09-bed3-e6962ddfbaf4
+
+	column Financial_Benefit_Level
+		dataType: string
+		lineageTag: 88f1f89f-7ce9-4fcf-a374-d2190b46fc45
+		summarizeBy: none
+		sourceColumn: Financial_Benefit_Level
+		sortByColumn: Order
+
+	column Order
+		dataType: int64
+		lineageTag: 594e23a5-1bdf-4609-aee0-4586ab91316d
+		summarizeBy: none
+		sourceColumn: Order
+
+	partition Levels = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "levels.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    H = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    T = Table.TransformColumnTypes(H,{{"Financial_Benefit_Level", type text},{"Order", Int64.Type}})
+				in
+				    T
+

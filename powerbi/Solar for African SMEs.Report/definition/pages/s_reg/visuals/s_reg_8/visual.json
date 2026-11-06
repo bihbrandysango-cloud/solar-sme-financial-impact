@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_reg_8",
+  "position": {
+    "x": 136,
+    "y": 204,
+    "z": 1008,
+    "height": 218,
+    "width": 454,
+    "tabOrder": 1008
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Short"
+                }
+              },
+              "queryRef": "Systems.Short",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "Geography.Region",
+              "nativeQueryRef": "g",
+              "displayName": "g"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Return"
+                }
+              },
+              "queryRef": "_Measures.Avg Return",
+              "nativeQueryRef": "v",
+              "displayName": "v"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"layer\": [{\"mark\": {\"type\": \"rect\", \"cornerRadius\": 4, \"stroke\": \"#08131F\", \"strokeWidth\": 2, \"opacity\": 1}, \"encoding\": {\"x\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"orient\": \"top\", \"grid\": false, \"labelAngle\": 0}}, \"y\": {\"field\": \"g\", \"type\": \"nominal\", \"sort\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"color\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"range\": [\"#3A2A0A\", \"#8A5F12\", \"#FF9F1C\", \"#FFD23F\"]}, \"legend\": null}, \"tooltip\": [{\"field\": \"g\", \"title\": \"Region\"}, {\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"v\", \"title\": \"Average return\", \"format\": \".1f\"}]}}, {\"transform\": [{\"filter\": \"isValid(datum.v)\"}], \"mark\": {\"type\": \"text\", \"fontSize\": 12, \"fontWeight\": 700}, \"encoding\": {\"x\": {\"field\": \"s\", \"type\": \"nominal\", \"sort\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"orient\": \"top\", \"grid\": false, \"labelAngle\": 0}}, \"y\": {\"field\": \"g\", \"type\": \"nominal\", \"sort\": [\"West Africa\", \"East Africa\", \"Central Africa\", \"Southern Africa\"], \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"grid\": false}}, \"text\": {\"field\": \"v\", \"format\": \".1f\"}, \"color\": {\"condition\": {\"test\": \"datum.v>31\", \"value\": \"#06111C\"}, \"value\": \"#F1F7FC\"}}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

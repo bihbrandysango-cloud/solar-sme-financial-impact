@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sys_8",
+  "position": {
+    "x": 136,
+    "y": 230,
+    "z": 1008,
+    "height": 214,
+    "width": 532,
+    "tabOrder": 1008
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Short"
+                }
+              },
+              "queryRef": "Systems.Short",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Price"
+                }
+              },
+              "queryRef": "_Measures.Avg Price",
+              "nativeQueryRef": "pr",
+              "displayName": "pr"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Savings"
+                }
+              },
+              "queryRef": "_Measures.Avg Savings",
+              "nativeQueryRef": "sv",
+              "displayName": "sv"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"layer\": [{\"transform\": [{\"calculate\": \"sequence(0,6)\", \"as\": \"yr\"}, {\"flatten\": [\"yr\"]}, {\"filter\": \"datum.yr<=5\"}, {\"calculate\": \"datum.sv*datum.yr\", \"as\": \"v\"}], \"mark\": {\"type\": \"line\", \"strokeWidth\": 2.4}, \"encoding\": {\"x\": {\"field\": \"yr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 5], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"grid\": false, \"values\": [0, 1, 2, 3, 4, 5], \"labelExpr\": \"''Yr ''+datum.value\", \"title\": null}}, \"y\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 2500]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [0, 500, 1000, 1500, 2000, 2500], \"labelExpr\": \"''$''+format(datum.value,'','')\"}}, \"color\": {\"field\": \"s\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"range\": [\"#FFD23F\", \"#4FB3F0\", \"#FF9F1C\", \"#F1F7FC\"]}, \"legend\": {\"orient\": \"right\", \"title\": null, \"labelColor\": \"#F1F7FC\", \"labelFontSize\": 11, \"symbolType\": \"stroke\"}}}}, {\"transform\": [{\"calculate\": \"datum.pr/datum.sv\", \"as\": \"yr\"}, {\"calculate\": \"datum.pr\", \"as\": \"v\"}], \"mark\": {\"type\": \"point\", \"filled\": true, \"size\": 90, \"opacity\": 1, \"stroke\": \"#06111C\", \"strokeWidth\": 1.2}, \"encoding\": {\"x\": {\"field\": \"yr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 5], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"grid\": false, \"values\": [0, 1, 2, 3, 4, 5], \"labelExpr\": \"''Yr ''+datum.value\", \"title\": null}}, \"y\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 2500]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [0, 500, 1000, 1500, 2000, 2500], \"labelExpr\": \"''$''+format(datum.value,'','')\"}}, \"color\": {\"field\": \"s\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"range\": [\"#FFD23F\", \"#4FB3F0\", \"#FF9F1C\", \"#F1F7FC\"]}, \"legend\": null}, \"tooltip\": [{\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"yr\", \"title\": \"Years to pay back\", \"format\": \".1f\"}]}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

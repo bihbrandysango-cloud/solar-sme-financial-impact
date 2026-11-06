@@ -1,0 +1,171 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sim_11",
+  "position": {
+    "x": 808,
+    "y": 172,
+    "z": 1011,
+    "height": 40,
+    "width": 180,
+    "tabOrder": 1011
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sim Under 2 Years"
+                }
+              },
+              "queryRef": "_Measures.Sim Under 2 Years",
+              "nativeQueryRef": "a",
+              "displayName": "a"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Now Under 2 Years"
+                }
+              },
+              "queryRef": "_Measures.Now Under 2 Years",
+              "nativeQueryRef": "b",
+              "displayName": "b"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"calculate\": \"format(datum.a,'',.0f'')+'' cases''\", \"as\": \"tV\"}, {\"calculate\": \"''from ''+format(datum.b,'',.0f'')\", \"as\": \"tC\"}], \"layer\": [{\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 20, \"color\": \"#F1F7FC\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"tV\"}}, \"transform\": [{\"calculate\": \"0\", \"as\": \"_x\"}, {\"calculate\": \"50\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"right\", \"baseline\": \"middle\", \"fontSize\": 12.5, \"color\": \"#FFD23F\", \"fontWeight\": 700, \"font\": \"Segoe UI\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"tC\"}}, \"transform\": [{\"calculate\": \"100\", \"as\": \"_x\"}, {\"calculate\": \"50\", \"as\": \"_y\"}]}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

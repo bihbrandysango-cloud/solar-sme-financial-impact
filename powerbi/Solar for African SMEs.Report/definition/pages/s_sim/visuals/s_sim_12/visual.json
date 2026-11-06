@@ -1,0 +1,201 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sim_12",
+  "position": {
+    "x": 136,
+    "y": 268,
+    "z": 1012,
+    "height": 212,
+    "width": 458,
+    "tabOrder": 1012
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Price"
+                }
+              },
+              "queryRef": "_Measures.Avg Price",
+              "nativeQueryRef": "p0",
+              "displayName": "p0"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Savings"
+                }
+              },
+              "queryRef": "_Measures.Avg Savings",
+              "nativeQueryRef": "s0",
+              "displayName": "s0"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sim Price"
+                }
+              },
+              "queryRef": "_Measures.Sim Price",
+              "nativeQueryRef": "p1",
+              "displayName": "p1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sim Savings"
+                }
+              },
+              "queryRef": "_Measures.Sim Savings",
+              "nativeQueryRef": "s1",
+              "displayName": "s1"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"fold\": [\"a\", \"b\"], \"as\": [\"k0\", \"_\"]}, {\"calculate\": \"datum.k0==''a''?''Now'':''Scenario''\", \"as\": \"k\"}, {\"calculate\": \"datum.k==''Now''?datum.s0/datum.p0:datum.s1/datum.p1\", \"as\": \"rate\"}], \"layer\": [{\"transform\": [{\"calculate\": \"sequence(0,6)\", \"as\": \"yr\"}, {\"flatten\": [\"yr\"]}, {\"calculate\": \"datum.rate*datum.yr*100\", \"as\": \"v\"}], \"mark\": {\"type\": \"line\", \"strokeWidth\": 2.8}, \"encoding\": {\"x\": {\"field\": \"yr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 5], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"grid\": false, \"values\": [0, 1, 2, 3, 4, 5], \"labelExpr\": \"''Yr ''+datum.value\", \"title\": null}}, \"y\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 300]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [0, 100, 200, 300], \"labelExpr\": \"datum.value+''%''\"}}, \"color\": {\"field\": \"k\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Now\", \"Scenario\"], \"range\": [\"#F1F7FC\", \"#FFD23F\"]}, \"legend\": {\"orient\": \"top-left\", \"title\": null, \"labelColor\": \"#F1F7FC\", \"labelFontSize\": 11, \"symbolType\": \"stroke\"}}}}, {\"transform\": [{\"calculate\": \"1/datum.rate\", \"as\": \"yr\"}, {\"calculate\": \"100\", \"as\": \"v\"}], \"mark\": {\"type\": \"point\", \"filled\": true, \"size\": 80, \"opacity\": 1, \"stroke\": \"#06111C\"}, \"encoding\": {\"x\": {\"field\": \"yr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 5], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"grid\": false, \"values\": [0, 1, 2, 3, 4, 5], \"labelExpr\": \"''Yr ''+datum.value\", \"title\": null}}, \"y\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 300]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [0, 100, 200, 300], \"labelExpr\": \"datum.value+''%''\"}}, \"color\": {\"field\": \"k\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Now\", \"Scenario\"], \"range\": [\"#F1F7FC\", \"#FFD23F\"]}, \"legend\": null}}}, {\"transform\": [{\"calculate\": \"1/datum.rate\", \"as\": \"yr\"}, {\"calculate\": \"100\", \"as\": \"v\"}, {\"calculate\": \"format(datum.yr,''.1f'')+'' yrs''\", \"as\": \"t\"}], \"mark\": {\"type\": \"text\", \"dy\": {\"expr\": \"datum.k==''Now''?16:-15\"}, \"dx\": {\"expr\": \"datum.k==''Now''?14:-10\"}, \"fontSize\": 11.5, \"fontWeight\": 700}, \"encoding\": {\"x\": {\"field\": \"yr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 5], \"nice\": false}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"grid\": false, \"values\": [0, 1, 2, 3, 4, 5], \"labelExpr\": \"''Yr ''+datum.value\", \"title\": null}}, \"y\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 300]}, \"axis\": {\"labelColor\": \"#C5D6E3\", \"tickColor\": \"transparent\", \"domain\": false, \"gridColor\": \"rgba(255,255,255,.15)\", \"titleColor\": \"#C5D6E3\", \"labelFontSize\": 11, \"titleFontSize\": 11, \"titleFontWeight\": 400, \"labelFont\": \"Segoe UI\", \"title\": null, \"values\": [0, 100, 200, 300], \"labelExpr\": \"datum.value+''%''\"}}, \"text\": {\"field\": \"t\"}, \"color\": {\"field\": \"k\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Now\", \"Scenario\"], \"range\": [\"#F1F7FC\", \"#FFD23F\"]}, \"legend\": null}}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

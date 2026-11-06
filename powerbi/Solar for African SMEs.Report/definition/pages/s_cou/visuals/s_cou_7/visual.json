@@ -1,0 +1,238 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_cou_7",
+  "position": {
+    "x": 136,
+    "y": 90,
+    "z": 1007,
+    "height": 420,
+    "width": 504,
+    "tabOrder": 1007
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Geography.Country",
+              "nativeQueryRef": "c",
+              "displayName": "c"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "Geography.Code",
+              "nativeQueryRef": "k",
+              "displayName": "k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Hex Row"
+                }
+              },
+              "queryRef": "Geography.Hex Row",
+              "nativeQueryRef": "hr",
+              "displayName": "hr"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Geography"
+                    }
+                  },
+                  "Property": "Hex Col"
+                }
+              },
+              "queryRef": "Geography.Hex Col",
+              "nativeQueryRef": "hc",
+              "displayName": "hc"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Return"
+                }
+              },
+              "queryRef": "_Measures.Avg Return",
+              "nativeQueryRef": "v",
+              "displayName": "v"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Payback"
+                }
+              },
+              "queryRef": "_Measures.Avg Payback",
+              "nativeQueryRef": "py",
+              "displayName": "py"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"calculate\": \"datum.hc+(datum.hr%2==1?0.5:0)\", \"as\": \"hx\"}], \"layer\": [{\"mark\": {\"type\": \"point\", \"shape\": \"M0,-1L0.866,-0.5L0.866,0.5L0,1L-0.866,0.5L-0.866,-0.5Z\", \"filled\": true, \"size\": 2150, \"opacity\": 1, \"strokeWidth\": 0}, \"encoding\": {\"x\": {\"field\": \"hx\", \"type\": \"quantitative\", \"scale\": {\"domain\": [-0.6, 11.2], \"nice\": false}, \"axis\": null}, \"y\": {\"field\": \"hr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [10, -1], \"nice\": false}, \"axis\": null}, \"color\": {\"field\": \"v\", \"type\": \"quantitative\", \"scale\": {\"domain\": [24, 43], \"range\": [\"#8A4B0F\", \"#FF9F1C\", \"#FFD23F\", \"#FFF3B0\"]}, \"legend\": null}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}, \"tooltip\": [{\"field\": \"c\", \"title\": \"Country\"}, {\"field\": \"v\", \"title\": \"Average return\", \"format\": \".1f\"}, {\"field\": \"py\", \"title\": \"Payback, years\", \"format\": \".1f\"}]}}, {\"mark\": {\"type\": \"text\", \"fontSize\": 10.5, \"fontWeight\": 700}, \"encoding\": {\"x\": {\"field\": \"hx\", \"type\": \"quantitative\", \"scale\": {\"domain\": [-0.6, 11.2], \"nice\": false}, \"axis\": null}, \"y\": {\"field\": \"hr\", \"type\": \"quantitative\", \"scale\": {\"domain\": [10, -1], \"nice\": false}, \"axis\": null}, \"text\": {\"field\": \"k\"}, \"color\": {\"condition\": {\"test\": \"datum.v<28\", \"value\": \"#F1F7FC\"}, \"value\": \"#06111C\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}}}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            },
+            "enableSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,63 @@
+table Geography
+	lineageTag: 84dd8772-2634-4427-a8f2-0bcb203f710c
+
+	column Country
+		dataType: string
+		lineageTag: 5cb49668-3e5b-4eb6-b0f4-765b008e9db2
+		summarizeBy: none
+		sourceColumn: Country
+
+	column Region
+		dataType: string
+		lineageTag: 95ac5da0-5a91-4895-aa48-1774e1a0b5c9
+		summarizeBy: none
+		sourceColumn: Region
+		sortByColumn: 'Region Order'
+
+	column 'Region Short'
+		dataType: string
+		lineageTag: 18567aa3-512b-4829-98a4-f059bf611d2c
+		summarizeBy: none
+		sourceColumn: Region Short
+		sortByColumn: 'Region Order'
+
+	column 'Region Order'
+		dataType: int64
+		lineageTag: 085786aa-bc1b-4b99-84c1-29a52a029830
+		summarizeBy: none
+		sourceColumn: Region Order
+
+	column Short
+		dataType: string
+		lineageTag: 90feeb4f-abc8-41f4-bec2-7633d7b9b948
+		summarizeBy: none
+		sourceColumn: Short
+
+	column Code
+		dataType: string
+		lineageTag: 9e2cc998-d411-487b-9352-7d934c3b60fb
+		summarizeBy: none
+		sourceColumn: Code
+
+	column 'Hex Row'
+		dataType: int64
+		lineageTag: 66b0fd57-9cae-4d87-8ff9-037ab0f1d166
+		summarizeBy: none
+		sourceColumn: Hex Row
+
+	column 'Hex Col'
+		dataType: int64
+		lineageTag: 6bf9d184-da01-4939-93ae-e4d5419e8691
+		summarizeBy: none
+		sourceColumn: Hex Col
+
+	partition Geography = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "geography.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    H = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    T = Table.TransformColumnTypes(H,{{"Country", type text},{"Region", type text},{"Region Short", type text},{"Region Order", Int64.Type},{"Short", type text},{"Code", type text},{"Hex Row", Int64.Type},{"Hex Col", Int64.Type}})
+				in
+				    T
+

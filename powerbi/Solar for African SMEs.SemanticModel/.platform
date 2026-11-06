@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Solar for African SMEs"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "04161c37-2dbb-4baa-b1fc-630f266b23fa"
+  }
+}

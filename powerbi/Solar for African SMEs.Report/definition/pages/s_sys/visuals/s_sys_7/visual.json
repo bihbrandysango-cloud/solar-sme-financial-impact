@@ -1,0 +1,253 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "s_sys_7",
+  "position": {
+    "x": 128,
+    "y": 46,
+    "z": 1007,
+    "height": 132,
+    "width": 874,
+    "tabOrder": 1007
+  },
+  "visual": {
+    "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "query": {
+      "queryState": {
+        "dataset": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Short"
+                }
+              },
+              "queryRef": "Systems.Short",
+              "nativeQueryRef": "s",
+              "displayName": "s"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "Order"
+                }
+              },
+              "queryRef": "Systems.Order",
+              "nativeQueryRef": "o",
+              "displayName": "o"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Systems"
+                    }
+                  },
+                  "Property": "SME_Type"
+                }
+              },
+              "queryRef": "Systems.SME_Type",
+              "nativeQueryRef": "t",
+              "displayName": "t"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Payback"
+                }
+              },
+              "queryRef": "_Measures.Avg Payback",
+              "nativeQueryRef": "py",
+              "displayName": "py"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Price"
+                }
+              },
+              "queryRef": "_Measures.Avg Price",
+              "nativeQueryRef": "pr",
+              "displayName": "pr"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Savings"
+                }
+              },
+              "queryRef": "_Measures.Avg Savings",
+              "nativeQueryRef": "sv",
+              "displayName": "sv"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Return"
+                }
+              },
+              "queryRef": "_Measures.Avg Return",
+              "nativeQueryRef": "r",
+              "displayName": "r"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "vega": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vegaLite'"
+                }
+              }
+            },
+            "jsonSpec": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"data\": {\"name\": \"dataset\"}, \"width\": \"container\", \"height\": \"container\", \"transform\": [{\"calculate\": \"format(datum.py,''.1f'')+'' years''\", \"as\": \"a\"}, {\"calculate\": \"''$''+format(datum.pr,'',.0f'')+'' price, $''+format(datum.sv,'',.0f'')+'' saved''\", \"as\": \"b\"}, {\"calculate\": \"format(datum.r,''.1f'')+''% return''\", \"as\": \"c\"}, {\"calculate\": \"''For ''+lower(datum.t)\", \"as\": \"d\"}], \"layer\": [{\"mark\": {\"type\": \"rect\", \"color\": \"#FFFFFF\", \"opacity\": 0.001}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"x2\": {\"field\": \"_x2\"}, \"y2\": {\"field\": \"_y2\"}, \"tooltip\": [{\"field\": \"s\", \"title\": \"System\"}, {\"field\": \"b\", \"title\": \"Cost\"}]}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29\", \"as\": \"_x\"}, {\"calculate\": \"0\", \"as\": \"_y\"}, {\"calculate\": \"(datum.o-1)*25.29+24.1\", \"as\": \"_x2\"}, {\"calculate\": \"100\", \"as\": \"_y2\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 14, \"fontWeight\": 700}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"s\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}, \"color\": {\"field\": \"s\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"range\": [\"#FFD23F\", \"#4FB3F0\", \"#FF9F1C\", \"#F1F7FC\"]}, \"legend\": null}}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29+1.3+0\", \"as\": \"_x\"}, {\"calculate\": \"14\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 11.5, \"fontWeight\": 400, \"color\": \"#C5D6E3\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"d\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29+1.3+0\", \"as\": \"_x\"}, {\"calculate\": \"29\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 26, \"fontWeight\": 700, \"color\": \"#F1F7FC\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"a\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29+1.3+0\", \"as\": \"_x\"}, {\"calculate\": \"52\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"fontWeight\": 400, \"color\": \"#F1F7FC\"}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"b\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29+1.3+0\", \"as\": \"_x\"}, {\"calculate\": \"73\", \"as\": \"_y\"}]}, {\"mark\": {\"type\": \"text\", \"align\": \"left\", \"baseline\": \"middle\", \"fontSize\": 12, \"fontWeight\": 700}, \"encoding\": {\"x\": {\"field\": \"_x\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 100]}, \"axis\": null}, \"y\": {\"field\": \"_y\", \"type\": \"quantitative\", \"scale\": {\"domain\": [100, 0]}, \"axis\": null}, \"text\": {\"field\": \"c\"}, \"opacity\": {\"condition\": {\"test\": \"datum.__selected__==''off''\", \"value\": 0.25}, \"value\": 1}, \"color\": {\"field\": \"s\", \"type\": \"nominal\", \"scale\": {\"domain\": [\"Water Pump\", \"Refrigeration\", \"Larger SHS\", \"Small SHS\"], \"range\": [\"#FFD23F\", \"#4FB3F0\", \"#FF9F1C\", \"#F1F7FC\"]}, \"legend\": null}}, \"transform\": [{\"calculate\": \"(datum.o-1)*25.29+1.3+0\", \"as\": \"_x\"}, {\"calculate\": \"88\", \"as\": \"_y\"}]}]}'"
+                }
+              }
+            },
+            "jsonConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"view\": {\"stroke\": \"transparent\"}, \"font\": \"Segoe UI\", \"padding\": 0, \"background\": \"transparent\"}'"
+                }
+              }
+            },
+            "renderMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'svg'"
+                }
+              }
+            },
+            "enableTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.4.3'"
+                }
+              }
+            },
+            "enableSelection": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

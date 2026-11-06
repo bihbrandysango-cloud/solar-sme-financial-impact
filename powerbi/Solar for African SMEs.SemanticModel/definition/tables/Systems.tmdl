@@ -1,0 +1,38 @@
+table Systems
+	lineageTag: d99ffa6b-b82f-472d-ac81-e41c30d9ce80
+
+	column System_Type
+		dataType: string
+		lineageTag: cdf741c1-5904-4970-9aa9-f203b5a4c03d
+		summarizeBy: none
+		sourceColumn: System_Type
+
+	column Short
+		dataType: string
+		lineageTag: a9e906d1-dd6a-4fa3-937e-e925a6ee0d2c
+		summarizeBy: none
+		sourceColumn: Short
+		sortByColumn: Order
+
+	column SME_Type
+		dataType: string
+		lineageTag: e4b1c856-908f-4783-958a-b737ed89a401
+		summarizeBy: none
+		sourceColumn: SME_Type
+
+	column Order
+		dataType: int64
+		lineageTag: b0619556-c8a5-4255-b794-d5c55cd96b6d
+		summarizeBy: none
+		sourceColumn: Order
+
+	partition Systems = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "systems.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    H = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    T = Table.TransformColumnTypes(H,{{"System_Type", type text},{"Short", type text},{"SME_Type", type text},{"Order", Int64.Type}})
+				in
+				    T
+

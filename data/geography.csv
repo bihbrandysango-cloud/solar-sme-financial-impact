@@ -1,0 +1,50 @@
+Country,Region,Region Short,Region Order,Short,Code,Hex Row,Hex Col
+Angola,Central Africa,Central,3,Angola,AO,5,6
+Benin,West Africa,West,1,Benin,BJ,2,4
+Botswana,Southern Africa,Southern,4,Botswana,BW,7,5
+Burkina Faso,West Africa,West,1,Burkina,BF,2,3
+Burundi,East Africa,East,2,Burundi,BI,5,7
+Cabo Verde,West Africa,West,1,Cabo Verde,CV,1,0
+Cameroon,Central Africa,Central,3,Cameroon,CM,3,5
+Central African Republic,Central Africa,Central,3,CAR,CF,2,6
+Chad,Central Africa,Central,3,Chad,TD,1,5
+Comoros,East Africa,East,2,Comoros,KM,6,9
+Congo (Brazzaville),Central Africa,Central,3,Congo,CG,4,6
+Congo (Kinshasa),Central Africa,Central,3,DR Congo,CD,3,6
+Cote d'Ivoire,West Africa,West,1,Ivory Coast,CI,3,3
+Djibouti,East Africa,East,2,Djibouti,DJ,1,8
+Equatorial Guinea,Central Africa,Central,3,Eq. Guinea,GQ,4,4
+Eritrea,East Africa,East,2,Eritrea,ER,1,7
+Eswatini,Southern Africa,Southern,4,Eswatini,SZ,7,7
+Ethiopia,East Africa,East,2,Ethiopia,ET,2,8
+Gabon,Central Africa,Central,3,Gabon,GA,4,5
+Gambia,West Africa,West,1,Gambia,GM,2,1
+Ghana,West Africa,West,1,Ghana,GH,4,3
+Guinea,West Africa,West,1,Guinea,GN,3,2
+Guinea-Bissau,West Africa,West,1,G-Bissau,GW,3,1
+Kenya,East Africa,East,2,Kenya,KE,4,8
+Lesotho,Southern Africa,Southern,4,Lesotho,LS,8,7
+Liberia,West Africa,West,1,Liberia,LR,4,2
+Madagascar,East Africa,East,2,Madagascar,MG,7,9
+Malawi,Southern Africa,Southern,4,Malawi,MW,6,7
+Mali,West Africa,West,1,Mali,ML,1,3
+Mauritania,West Africa,West,1,Mauritania,MR,1,2
+Mauritius,East Africa,East,2,Mauritius,MU,7,10
+Mozambique,Southern Africa,Southern,4,Mozambique,MZ,6,8
+Namibia,Southern Africa,Southern,4,Namibia,NA,6,5
+Niger,West Africa,West,1,Niger,NE,1,4
+Nigeria,West Africa,West,1,Nigeria,NG,2,5
+Rwanda,East Africa,East,2,Rwanda,RW,4,7
+Sao Tome and Principe,Central Africa,Central,3,Sao Tome,ST,5,4
+Senegal,West Africa,West,1,Senegal,SN,2,2
+Seychelles,East Africa,East,2,Seychelles,SC,5,10
+Sierra Leone,West Africa,West,1,S. Leone,SL,4,1
+Somalia,East Africa,East,2,Somalia,SO,3,8
+South Africa,Southern Africa,Southern,4,S. Africa,ZA,8,6
+South Sudan,East Africa,East,2,South Sudan,SS,2,7
+Sudan,East Africa,East,2,Sudan,SD,1,6
+Tanzania,East Africa,East,2,Tanzania,TZ,5,8
+Togo,West Africa,West,1,Togo,TG,3,4
+Uganda,East Africa,East,2,Uganda,UG,3,7
+Zambia,Southern Africa,Southern,4,Zambia,ZM,6,6
+Zimbabwe,Southern Africa,Southern,4,Zimbabwe,ZW,7,6

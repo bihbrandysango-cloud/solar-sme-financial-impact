@@ -1,0 +1,12 @@
+relationship r0
+	fromColumn: SolarCases.Country
+	toColumn: Geography.Country
+
+relationship r1
+	fromColumn: SolarCases.System_Type
+	toColumn: Systems.System_Type
+
+relationship r2
+	fromColumn: SolarCases.Financial_Benefit_Level
+	toColumn: Levels.Financial_Benefit_Level
+

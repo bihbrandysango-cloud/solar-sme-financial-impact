@@ -1,0 +1,230 @@
+table _Measures
+	lineageTag: 10a8431a-9278-44b5-8fa1-6f39426286f3
+
+	measure Cases = COUNTROWS(SolarCases)
+		formatString: #,0
+		lineageTag: 64d1bae6-0ea1-4fc6-a28f-be5ecceef0e2
+
+	measure Countries = DISTINCTCOUNT(SolarCases[Country])
+		formatString: #,0
+		lineageTag: 4495e67a-29f1-4830-ba7a-e78bd475835c
+
+	measure 'Avg Return' = AVERAGE(SolarCases[ROI_Percent])
+		formatString: 0.0\%
+		lineageTag: 840c1211-eec4-4bb7-a370-a18ec24e6722
+
+	measure 'Avg Payback' = AVERAGE(SolarCases[Payback_Period_Years])
+		formatString: 0.0
+		lineageTag: a3729b44-b89f-4f4a-8984-f52c071664de
+
+	measure 'Avg Price' = AVERAGE(SolarCases[Avg_System_Price_USD])
+		formatString: \$#,0
+		lineageTag: d57bfe6d-1908-4170-9d33-3129ca8f079a
+
+	measure 'Avg Savings' = AVERAGE(SolarCases[Annual_Savings_USD])
+		formatString: \$#,0
+		lineageTag: 5d817941-d31d-4c54-b235-3fcbdaea73b5
+
+	measure 'Max Return' = MAX(SolarCases[ROI_Percent])
+		formatString: 0.0\%
+		lineageTag: 76e10470-6522-4f1d-9d31-c5e3fa02e4bf
+
+	measure 'Min Return' = MIN(SolarCases[ROI_Percent])
+		formatString: 0.0\%
+		lineageTag: 3d3f971e-6313-4502-8b3e-cf6b8cb96aa0
+
+	measure 'Min Payback' = MIN(SolarCases[Payback_Period_Years])
+		formatString: 0.0
+		lineageTag: 39d68a03-793c-4046-9b52-43c412087b2a
+
+	measure 'Max Payback' = MAX(SolarCases[Payback_Period_Years])
+		formatString: 0.0
+		lineageTag: 9ce746ed-e414-4b2a-9c3e-2760751192b7
+
+	measure 'Max Savings' = MAX(SolarCases[Annual_Savings_USD])
+		formatString: \$#,0
+		lineageTag: 97eda2a2-765f-430d-b007-d7395cdf825a
+
+	measure 'Pump Return' = CALCULATE([Avg Return],KEEPFILTERS(Systems[Short]="Water Pump"))
+		formatString: 0.0\%
+		lineageTag: 6c22769a-2c36-489f-bd0c-0202e6b3a894
+
+	measure 'Fridge Return' = CALCULATE([Avg Return],KEEPFILTERS(Systems[Short]="Refrigeration"))
+		formatString: 0.0\%
+		lineageTag: 72f1d4a2-d634-4d16-9d28-9b723aa1b153
+
+	measure 'Cases Under 3 Years' = COUNTROWS(FILTER(SolarCases,SolarCases[Payback_Period_Years]<3))
+		formatString: #,0
+		lineageTag: 52e15e0d-c00e-4a0c-af1f-114063442c83
+
+	measure 'Share Under 3 Years' = DIVIDE([Cases Under 3 Years],[Cases])*100
+		formatString: 0.0\%
+		lineageTag: 58615f0d-c28b-4a59-a481-1dd64c0d8d44
+
+	measure 'Top Country' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Geography[Country]),[Cases]>0),"r",[Avg Return]),[r],DESC),Geography[Country])
+		lineageTag: 218d5fbf-d01d-439e-9294-7a34441ba051
+
+	measure 'Low Country' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Geography[Country]),[Cases]>0),"r",[Avg Return]),[r],ASC),Geography[Country])
+		lineageTag: bb35ad70-e95c-48b8-9665-64135597fae8
+
+	measure 'Top Region' = VAR c=[Top Country] RETURN LOOKUPVALUE(Geography[Region],Geography[Country],c)
+		lineageTag: 88b29725-e13f-47c7-87b4-6e408fa3339e
+
+	measure 'Top Return' = VAR c=[Top Country] RETURN CALCULATE([Avg Return],Geography[Country]=c)
+		formatString: 0.0\%
+		lineageTag: 47c4aaa9-4805-4fb0-a44b-7065074f3d0b
+
+	measure 'Top Payback' = VAR c=[Top Country] RETURN CALCULATE([Avg Payback],Geography[Country]=c)
+		formatString: 0.0
+		lineageTag: 7331b72f-d90b-4feb-80e6-76b799dffe79
+
+	measure 'Top Savings' = VAR c=[Top Country] RETURN CALCULATE([Avg Savings],Geography[Country]=c)
+		formatString: \$#,0
+		lineageTag: 945b3e16-0f8a-49e6-bcec-3c3d73aedbd7
+
+	measure 'Low Return' = VAR c=[Low Country] RETURN CALCULATE([Avg Return],Geography[Country]=c)
+		formatString: 0.0\%
+		lineageTag: 8a146893-fee5-4c6b-a436-ae351e9eb82e
+
+	measure 'Top Best System' = VAR c=[Top Country] RETURN CALCULATE(MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Systems[Short]),[Cases]>0),"r",[Avg Return]),[r],DESC),Systems[Short]),Geography[Country]=c)
+		lineageTag: a5f376b1-833f-4364-9802-9fe61b2d126f
+
+	measure 'Top Best Return' = VAR c=[Top Country] VAR s=[Top Best System] RETURN CALCULATE([Avg Return],Geography[Country]=c,Systems[Short]=s)
+		formatString: 0.0\%
+		lineageTag: 339c0003-60ed-4ce7-8021-5bcebfae4341
+
+	measure 'Country Title' = IF(HASONEVALUE(Geography[Country]),"Selected country",IF(ISFILTERED(Geography[Region Short]),"Highest return in region","Highest return country"))
+		lineageTag: 46ae20d4-6d76-4692-9fa9-5224455ecccf
+
+	measure 'Fixed Country' = CALCULATE([Top Country],ALL(Systems))
+		lineageTag: 3bb54708-f505-43a9-bf93-54355cab6b7a
+
+	measure 'Fixed Country Return' = VAR c=[Fixed Country] RETURN CALCULATE([Avg Return],Geography[Country]=c)
+		formatString: 0.0\%
+		lineageTag: bc0693fc-dbf1-43f9-9dc6-53e2f5511dbe
+
+	measure 'Fixed Country System Savings' = VAR c=[Fixed Country] RETURN CALCULATE([Avg Savings],Geography[Country]=c)
+		formatString: \$#,0
+		lineageTag: bfb16573-14d6-46ee-90e0-fbb6fbdc49cd
+
+	measure 'Fast System' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Systems[Short]),[Cases]>0),"r",[Avg Payback]),[r],ASC),Systems[Short])
+		lineageTag: 57c49b54-18c6-4fef-9263-3289c87726d3
+
+	measure 'Slow System' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Systems[Short]),[Cases]>0),"r",[Avg Payback]),[r],DESC),Systems[Short])
+		lineageTag: 77543640-554e-4355-8ee4-4f1c8b9bf662
+
+	measure 'Fast Payback' = VAR s=[Fast System] RETURN CALCULATE([Avg Payback],Systems[Short]=s)
+		formatString: 0.0
+		lineageTag: 389d7bff-f54a-4566-b7c0-14185c797cad
+
+	measure 'Fast Price' = VAR s=[Fast System] RETURN CALCULATE([Avg Price],Systems[Short]=s)
+		formatString: \$#,0
+		lineageTag: 54f31fe3-ce75-435a-b66d-ba0ab19ac7be
+
+	measure 'Fast Savings' = VAR s=[Fast System] RETURN CALCULATE([Avg Savings],Systems[Short]=s)
+		formatString: \$#,0
+		lineageTag: 7839e947-8e69-485b-a335-35c25dab103f
+
+	measure 'Fast Return' = VAR s=[Fast System] RETURN CALCULATE([Avg Return],Systems[Short]=s)
+		formatString: 0.0\%
+		lineageTag: 98a5f76c-b11a-4c5a-96b0-d99ceafb4ce3
+
+	measure 'Slow Payback' = VAR s=[Slow System] RETURN CALCULATE([Avg Payback],Systems[Short]=s)
+		formatString: 0.0
+		lineageTag: 421d16d2-62fb-4ce2-96c5-faad0a74fa31
+
+	measure 'Best Region' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Geography[Region]),[Cases]>0),"r",[Avg Return]),[r],DESC),Geography[Region])
+		lineageTag: 8e681476-6466-4606-b0f7-d5d11af4e989
+
+	measure 'Low Region' = MAXX(TOPN(1,ADDCOLUMNS(FILTER(VALUES(Geography[Region]),[Cases]>0),"r",[Avg Return]),[r],ASC),Geography[Region])
+		lineageTag: eca589da-29ca-4ac3-ad04-524c2c185802
+
+	measure 'Best Region Return' = VAR r=[Best Region] RETURN CALCULATE([Avg Return],Geography[Region]=r)
+		formatString: 0.0\%
+		lineageTag: 281896d3-4962-433f-97e2-790d938468f0
+
+	measure 'Best Region Payback' = VAR r=[Best Region] RETURN CALCULATE([Avg Payback],Geography[Region]=r)
+		formatString: 0.0
+		lineageTag: f48a76d1-d4e5-4ed5-8ce2-4dd78a45349b
+
+	measure 'Low Region Return' = VAR r=[Low Region] RETURN CALCULATE([Avg Return],Geography[Region]=r)
+		formatString: 0.0\%
+		lineageTag: 1359e658-1f40-46b0-a00a-ff6de876cc4e
+
+	measure 'Low Region Payback' = VAR r=[Low Region] RETURN CALCULATE([Avg Payback],Geography[Region]=r)
+		formatString: 0.0
+		lineageTag: 67286c9f-4f19-4bb3-a0f3-f0553b398ff8
+
+	measure 'Subsidy Pct' = SELECTEDVALUE('Sim Subsidy'[Subsidy %],20)/100
+		formatString: 0%
+		lineageTag: 5b36378a-aee6-4977-9cb8-7b4b38207d38
+
+	measure 'Savings Change' = SELECTEDVALUE('Sim Savings'[Savings Change %],0)/100
+		formatString: 0%
+		lineageTag: c2e8b82a-baf9-4148-8ff0-501a389a7635
+
+	measure 'Sim Price' = [Avg Price]*(1-[Subsidy Pct])
+		formatString: \$#,0
+		lineageTag: 1b594577-a0e3-4617-bfbe-b19364da90a8
+
+	measure 'Sim Savings' = [Avg Savings]*(1+[Savings Change])
+		formatString: \$#,0
+		lineageTag: ff2bfdd4-e809-48cb-9b93-8e4d820bfb9a
+
+	measure 'Subsidy per System' = [Avg Price]*[Subsidy Pct]
+		formatString: \$#,0
+		lineageTag: d8da54a0-6f88-4735-9b4d-3efe903a0747
+
+	measure 'Sim Payback' = VAR s=[Subsidy Pct] VAR c=[Savings Change] RETURN AVERAGEX(SolarCases,SolarCases[Avg_System_Price_USD]*(1-s)/(SolarCases[Annual_Savings_USD]*(1+c)))
+		formatString: 0.0
+		lineageTag: 71205470-998b-4595-8b7d-c781d6ac1454
+
+	measure 'Sim Return' = VAR s=[Subsidy Pct] VAR c=[Savings Change] RETURN AVERAGEX(SolarCases,SolarCases[Annual_Savings_USD]*(1+c)/(SolarCases[Avg_System_Price_USD]*(1-s)))*100
+		formatString: 0.0\%
+		lineageTag: b559276e-8a12-4987-a8fb-9d8fe6c2c202
+
+	measure 'Now Under 2 Years' = COUNTROWS(FILTER(SolarCases,SolarCases[Avg_System_Price_USD]/SolarCases[Annual_Savings_USD]<2))+0
+		formatString: #,0
+		lineageTag: 63ad9d41-b2f9-477e-a9d4-838841928954
+
+	measure 'Sim Under 2 Years' = VAR s=[Subsidy Pct] VAR c=[Savings Change] RETURN COUNTROWS(FILTER(SolarCases,SolarCases[Avg_System_Price_USD]*(1-s)/(SolarCases[Annual_Savings_USD]*(1+c))<2))+0
+		formatString: #,0
+		lineageTag: d7b3e170-250f-4b1b-9225-1e9bc28d6125
+
+	measure 'Subsidy for 2 Years' = MAX(0,1-2*[Avg Savings]*(1+[Savings Change])/[Avg Price])*100
+		formatString: 0.0\%
+		lineageTag: 0d2429df-90f6-469d-b8a6-e5d349d347a4
+
+	measure 'System Insight' = IF(HASONEVALUE(Systems[Short]),SELECTEDVALUE(Systems[Short])&" costs "&FORMAT([Avg Price],"$#,0")&" and saves "&FORMAT([Avg Savings],"$#,0")&" a year, so it pays back in "&FORMAT([Avg Payback],"0.0")&" years.",[Fast System]&" pays back fastest at "&FORMAT([Fast Payback],"0.0")&" years, even at the highest price of "&FORMAT([Fast Price],"$#,0")&". "&[Slow System]&" takes longest, at "&FORMAT([Slow Payback],"0.0")&" years.")
+		lineageTag: 5e2931ff-09e4-4a80-a265-e738af6e4e05
+
+	measure 'Region Insight' = IF(HASONEVALUE(Geography[Region]),SELECTEDVALUE(Geography[Region])&" averages a "&FORMAT([Avg Return],"0.0")&"% return and pays back in "&FORMAT([Avg Payback],"0.0")&" years.",[Best Region]&" returns "&FORMAT([Best Region Return]-[Low Region Return],"0.0")&" points more than "&[Low Region]&", and pays back "&FORMAT(([Low Region Payback]-[Best Region Payback])*12,"0")&" months sooner.")
+		lineageTag: 57ad5893-fd65-4c99-8a4c-6b13f97d4671
+
+	measure 'Sim Insight' = "A "&FORMAT([Subsidy Pct],"0%")&" subsidy with savings "&IF([Savings Change]=0,"unchanged",FORMAT([Savings Change],"+0%;-0%"))&" moves average payback from "&FORMAT([Avg Payback],"0.0")&" to "&FORMAT([Sim Payback],"0.0")&" years. It costs about "&FORMAT([Subsidy per System],"$#,0")&" per system."
+		lineageTag: 38dc77fb-b87f-4628-9b94-e49d359f6109
+
+	measure 'System Title' = IF(HASONEVALUE(Systems[Short]),"Selected system","Fastest payback")
+		lineageTag: b81f41f4-6170-469b-afc0-790709694d5e
+
+	measure 'System Sub' = IF(HASONEVALUE(Systems[Short]),"Used for "&LOWER(SELECTEDVALUE(Systems[SME_Type])),"Best of the four systems")
+		lineageTag: 39893b8b-6c15-4e31-bea1-12af32231dd1
+
+	measure 'Region Title' = IF(HASONEVALUE(Geography[Region]),"Selected region","Highest return region")
+		lineageTag: 97b9c5bb-a070-4253-96e6-edee5145e019
+
+	measure 'Region Sub' = IF(HASONEVALUE(Geography[Region]),[Countries]&" countries","Of the regions selected")
+		lineageTag: 3abd9b04-3081-419a-87e4-e82f5d72acfd
+
+	column x
+		dataType: int64
+		isHidden
+		lineageTag: e952b59c-c034-463d-a561-c82cb8ab1c47
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [x]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("x",0)
+
